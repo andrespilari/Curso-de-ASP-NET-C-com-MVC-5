@@ -1,0 +1,54 @@
+﻿@model Introducao.Models.Usuario
+
+@{
+    ViewBag.Title = "Resultado usuários";
+}
+
+<h2>Listar dados usuário</h2>
+
+<fieldset>
+    <legend>Usuário cadastrado</legend>
+    <div class="editor-label">
+        @Html.DisplayNameFor(x => x.Nome)
+    </div>
+    <div class="editor-campo">
+        @Html.DisplayFor(x => x.Nome)
+    </div>
+    <hr />
+    <div class="editor-label">
+        @Html.DisplayNameFor(x => x.Observacao)
+    </div>
+    <div class="editor-campo">
+        @Html.DisplayFor(x => x.Observacao)
+    </div>
+    <hr />
+    <div class="editor-label">
+        @Html.DisplayNameFor(x => x.Idade)
+    </div>
+    <div class="editor-campo">
+        @Html.DisplayFor(x => x.Idade)
+    </div>
+    <hr />
+    <div class="editor-label">
+        @Html.DisplayNameFor(x => x.Login)
+    </div>
+    <div class="editor-campo">
+        @Html.DisplayFor(x => x.Login)
+    </div>
+    <hr />
+    <div class="editor-label">
+        @Html.DisplayNameFor(x => x.Senha)
+    </div>
+    <div class="editor-campo">
+        @Html.DisplayFor(x => x.Senha)
+    </div>
+    <hr />
+    <div class="editor-label">
+        @Html.DisplayNameFor(x => x.ConfirmarSenha)
+    </div>
+    <div class="editor-campo">
+        @Html.DisplayFor(x => x.ConfirmarSenha)
+    </div>
+    <hr />
+    @Html.ActionLink("Voltar", "Usuario")
+</fieldset>

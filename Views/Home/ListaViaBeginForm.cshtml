@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "ListaViaBeginForm";
+}
+
+<h2>Lista</h2>
+<div>
+    <i>Pegando nome que vem do Model</i>
+    <b>@Html.LabelFor(x => x.PessoaId)</b>
+</div>
+<div>
+    @Model.PessoaId
+</div>
+<hr />
+<div>
+    <i>Pegando nome que vem do Model</i>
+    <b>@Html.LabelFor(x => x.Nome)</b>
+</div>
+<div>
+    @Model.Nome
+</div>
+<hr />
+<div>
+    <i>Pegando nome que vem do Model</i>
+    <b>@Html.LabelFor(x => x.Tipo)</b>
+</div>
+<div>
+    @Model.Tipo
+</div>
+<hr />
+<label>Botão feito usando Razor</label>
+@Html.ActionLink("Voltar", "Index", "Home")

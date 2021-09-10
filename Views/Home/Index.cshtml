@@ -1,0 +1,206 @@
+﻿@* A linha abaixo é para ser usada quando vai passar uma View tipada, que no caso é a classe Pessoa *@
+@model Introducao.Models.Pessoa
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Curso de ASP MVC</h2>
+<p>Andre Luis Spilari</p>
+
+<hr />
+<h3>Fazendo via ViewData</h3>
+<p>@ViewData["PessoaId"]</p>
+<p>@ViewData["Nome"]</p>
+<p>@ViewData["Tipo"]</p>
+<hr />
+<h3>Fazendo via ViewBag</h3>
+<p>@ViewBag.id</p>
+<p>@ViewBag.nome</p>
+<p>@ViewBag.tipo</p>
+<hr />
+<h3>Fazendo via View tipada</h3>
+<p>@Model.PessoaId</p>
+<p>@Model.Nome</p>
+<p>@Model.Tipo</p>
+<hr />
+<h3>Exemplo com formulario via POST via parametros</h3>
+<form action="Home/Lista" method="post">
+    <fieldset>
+        <legend>
+            Informações da pessoa
+        </legend>
+        <div>
+            <label for="PessoaId">Código</label>
+        </div>
+        <div>
+            <input type="number" name="PessoaId" value="@Model.PessoaId" />
+        </div>
+        <div>
+            <label for="Nome">Nome</label>
+        </div>
+        <div>
+            <input type="text" name="Nome" value="@Model.Nome" />
+        </div>
+        <div>
+            <label>Tipo</label>
+        </div>
+        <div>
+            <input type="text" name="Tipo" value="@Model.Tipo" />
+        </div>
+        <br />
+        <input type="submit" value="Enviar" />
+    </fieldset>
+</form>
+<hr />
+<h3>Exemplo de formulario via GET via parametros</h3>
+<form action="Home/ListaGet" method="get">
+    <fieldset>
+        <legend>
+            Informações da pessoa
+        </legend>
+        <div>
+            <label for="PessoaId">Código</label>
+        </div>
+        <div>
+            <input type="number" name="PessoaId" value="@Model.PessoaId" />
+        </div>
+        <div>
+            <label for="Nome">Nome</label>
+        </div>
+        <div>
+            <input type="type" name="Nome" value="@Model.Nome" />
+        </div>
+        <div>
+            <label for="Tipo">Tipo</label>
+        </div>
+        <div>
+            <input type="type" name="Tipo" value="@Model.Tipo" />
+        </div>
+        <br />
+        <input type="submit" name="" value="Enviar" />
+    </fieldset>
+</form>
+<hr />
+<h3>Exemplo com formulario via POST via FormCollection</h3>
+<form action="Home/ListaViaFormCollection" method="post">
+    <fieldset>
+        <legend>
+            Informações da pessoa
+        </legend>
+        <div>
+            <label for="PessoaId">Código</label>
+        </div>
+        <div>
+            <input type="number" name="PessoaId-11" value="@Model.PessoaId" />
+        </div>
+        <div>
+            <label for="Nome">Nome</label>
+        </div>
+        <div>
+            <input type="text" name="Nome-22" value="@Model.Nome" />
+        </div>
+        <div>
+            <label>Tipo</label>
+        </div>
+        <div>
+            <input type="text" name="Tipo-33" value="@Model.Tipo" />
+        </div>
+        <br />
+        <input type="submit" value="Enviar" />
+    </fieldset>
+</form>
+<hr />
+<h3>Exemplo com formulario via POST via View tipada</h3>
+<form action="Home/ListaViaViewTipada" method="post">
+    <fieldset>
+        <legend>
+            Informações da pessoa
+        </legend>
+        <div>
+            <label for="PessoaId">Código</label>
+        </div>
+        <div>
+            <input type="number" name="PessoaId" value="@Model.PessoaId" />
+        </div>
+        <div>
+            <label for="Nome">Nome</label>
+        </div>
+        <div>
+            <input type="text" name="Nome" value="@Model.Nome" />
+        </div>
+        <div>
+            <label>Tipo</label>
+        </div>
+        <div>
+            <input type="text" name="Tipo" value="@Model.Tipo" />
+        </div>
+        <br />
+        <input type="submit" value="Enviar" />
+    </fieldset>
+</form>
+<hr />
+<h3>Exemplo com formulario via POST via Helper View tipada</h3>
+<form action="Home/ListaViaHelperViewTipada" method="post">
+    <fieldset>
+        <legend>
+            Informações da pessoa
+        </legend>
+        <div>
+            <label for="PessoaId">Código</label>
+        </div>
+        <div>
+            <input type="number" name="PessoaId" value="@Model.PessoaId" />
+        </div>
+        <div>
+            <label for="Nome">Nome</label>
+        </div>
+        <div>
+            <input type="text" name="Nome" value="@Model.Nome" />
+        </div>
+        <div>
+            <label>Tipo</label>
+        </div>
+        <div>
+            <input type="text" name="Tipo" value="@Model.Tipo" />
+        </div>
+        <br />
+        <input type="submit" value="Enviar" />
+    </fieldset>
+</form>
+<hr />
+<h3>Exemplo com BeginForm</h3>
+@using (Html.BeginForm("Lista", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <legend>
+            Informações da pessoa
+        </legend>
+        <div>
+            <i>Usando tag html LABEL para mostrar abaixo</i>
+            <br />
+            <label>@Html.LabelFor(x => x.PessoaId)</label>
+        </div>
+        <div>
+            <label>@Html.EditorFor(x => x.PessoaId)</label>
+        </div>
+        <div>
+            <i>Não usando tag html nenhuma pra mostrar abaixo</i>
+            <br />
+            @Html.LabelFor(x => x.Nome)
+        </div>
+        <div>
+            @Html.EditorFor(x => x.Nome)
+        </div>
+        <div>
+            <i>Não usando tag html nenhuma pra mostrar abaixo</i>
+            <br />
+            @Html.LabelFor(x => x.Tipo)
+        </div>
+        <div>
+            @Html.EditorFor(x => x.Tipo)
+        </div>
+        <br />
+        <input type="submit" value="Enviar" />
+    </fieldset>
+}
