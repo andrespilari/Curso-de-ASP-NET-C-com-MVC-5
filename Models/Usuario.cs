@@ -25,7 +25,7 @@ namespace Introducao.Models
         [Required(ErrorMessage = "A senha é obrigatória!")]
         public string Senha { get; set; }
         [System.ComponentModel.DataAnnotations.Compare("Senha", ErrorMessage = "As senhas devem ser iguais!")]
-        [Required(ErrorMessage = "A confirmação de senha também é obrigatória!")]
+        [Required(ErrorMessage = "A confirmação de senha também é obrigatória!!!")]
         public string ConfirmarSenha { get; set; }
     }
 }
